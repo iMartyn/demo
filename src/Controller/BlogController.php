@@ -77,7 +77,9 @@ class BlogController extends AbstractController
         // have enabled the DebugBundle. Uncomment the following line to see it in action:
         //
         // dump($post, $this->getUser(), new \DateTime());
-
+        if (rand(0,9) == 9) {
+            throw new \Exception('Something random happened!');
+        }
         return $this->render('blog/post_show.html.twig', ['post' => $post]);
     }
 
